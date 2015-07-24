@@ -1,0 +1,23 @@
+<opcSimu plantName="chronoThermo" lib="dOPC"
+      KW_serverName="id"
+            KW_step="size"
+            KW_name="dscr"
+          KW_itemID="id"  
+       KW_preItemID="id"
+  >
+  <server id="AcmeSentrolServer3" _id="OPC.SimaticNET" _computerName="\\MONTI-ALUMASTER" separator="/" >
+    <group id="Main.Device[1]" dscr="Device_1" caption="Degreasing Tank 01                                                                          Sun AM  |  Sun PM  |  Mon AM  |  Mon PM  |  Tue AM  |  Tue PM  |  Wed AM  |  Wed PM  |  Thu AM  |  Thu PM  |  Fri AM  |  Fri PM  |  Sat AM  |  Sat PM" >
+      <item id="SetP[0]"  caption="1 bit = 1 hour" rem="BarID" readOnly="0"  />
+      <item id="SetP[%d]"  caption="1 bit = 1 hour" rem="BarID" readOnly="0" inRow="1" low="1" count="13" />
+    </group>
+    <group id="Main.Device[2]"  dscr="Device_2"  clone="Device_1" caption="Etching Tank 1"       />
+    <group id="Main.Device[3]"  dscr="Device_3"  clone="Device_1" caption="Etching Tank 2"       />
+    <group id="Main.Device[4]"  dscr="Device_4"  clone="Device_1" caption="Pickling Tank 3"      />
+    <group id="Main.Device[5]"  dscr="Device_5"  clone="Device_1" caption="Anodizing Tank 8"     />
+    <group id="Main.Device[6]"  dscr="Device_6"  clone="Device_1" caption="Anodizing Tank 9"     />
+    <group id="Main.Device[7]"  dscr="Device_7"  clone="Device_1" caption="Anodizing Tank 11"    />
+    <group id="Main.Device[8]"  dscr="Device_8"  clone="Device_1" caption="Electrocolor Tank 15" />
+    <group id="Main.Device[9]"  dscr="Device_9"  clone="Device_1" caption="Hot Sealing Tank 19"  />
+    <group id="Main.Device[10]" dscr="Device_10" clone="Device_1" caption="Hot Sealing Tank 20"  />
+  </server>
+</opcSimu>

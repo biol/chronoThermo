@@ -1,0 +1,530 @@
+date/time          : 2015-07-24, 19:50:58, 253ms
+computer name      : WIN-62BP9L12KVA
+user name          : Administrator <admin>
+registered owner   : Utente Windows
+operating system   : Windows 7 x64 Service Pack 1 build 7601
+system language    : Italian
+system up time     : 1 hour 6 minutes
+program up time    : 8 seconds
+processors         : 4x Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz
+physical memory    : 2350/4095 MB (free/total)
+free disk space    : (C:) 31,33 GB
+display mode       : 1920x1080, 32 bit
+process id         : $d94
+allocated memory   : 50,06 MB
+largest free block : 959,92 MB
+executable         : chronoThermo.exe
+exec. date/time    : 2015-07-24 19:50
+version            : 1.0.5683.5255
+compiled with      : Delphi XE8
+madExcept version  : 4.0.12
+callstack crc      : $491a1704, $c95651c7, $76abd187
+exception number   : 1
+exception class    : EAccessViolation
+exception message  : Access violation at address 00698968 in module 'chronoThermo.exe'. Read of address 0000000C.
+
+main thread ($ea4):
+00698968 +180 chronoThermo.exe dOpcFieldGroup     80  +13 TdOpcFieldGroup.setup
+006993db +0a3 chronoThermo.exe dOpcFieldServer    32   +5 TdOpcFieldServer.AddGroup
+0069966e +18a chronoThermo.exe dOpcFieldServer    73  +21 TdOpcFieldServer.setup
+0069a171 +081 chronoThermo.exe oFieldFactory      68   +2 FieldFactory.build_dOPC
+00699d16 +3d2 chronoThermo.exe oFieldFactory      61  +29 FieldFactory.buildFromXML
+0069b3c5 +0c5 chronoThermo.exe guiMain            40   +7 TFormMain.FormActivate
+006491d3 +027 chronoThermo.exe Vcl.Forms        5936   +2 TCustomForm.Activate
+0064a2f4 +010 chronoThermo.exe Vcl.Forms        6633   +2 TCustomForm.CMActivate
+005a0d1d +2bd chronoThermo.exe Vcl.Controls     7245  +91 TControl.WndProc
+005a58c5 +5e9 chronoThermo.exe Vcl.Controls    10079 +158 TWinControl.WndProc
+00646834 +62c chronoThermo.exe Vcl.Forms        4427 +206 TCustomForm.WndProc
+005a4ee4 +02c chronoThermo.exe Vcl.Controls     9786   +3 TWinControl.MainWndProc
+00539f5c +014 chronoThermo.exe System.Classes  16882   +8 StdWndProc
+767496c0 +047 USER32.dll                                  SendMessageW
+00643494 +010 chronoThermo.exe Vcl.Forms        2308   +2 SendFocusMessage
+00648e08 +134 chronoThermo.exe Vcl.Forms        5802  +31 TCustomForm.SetFocusedControl
+005a54a9 +1cd chronoThermo.exe Vcl.Controls     9948  +27 TWinControl.WndProc
+005a4ee4 +02c chronoThermo.exe Vcl.Controls     9786   +3 TWinControl.MainWndProc
+00539f5c +014 chronoThermo.exe System.Classes  16882   +8 StdWndProc
+770d0137 +02b ntdll.dll                                   KiUserCallbackDispatcher
+76752183 +00e USER32.dll                                  SetFocus
+00648fc5 +04d chronoThermo.exe Vcl.Forms        5863  +10 TCustomForm.SetWindowFocus
+00648bce +08a chronoThermo.exe Vcl.Forms        5724  +10 TCustomForm.SetActiveControl
+0064903b +04b chronoThermo.exe Vcl.Forms        5876   +7 TCustomForm.SetActive
+00649b1e +03a chronoThermo.exe Vcl.Forms        6261   +6 TCustomForm.WMActivate
+005a0d1d +2bd chronoThermo.exe Vcl.Controls     7245  +91 TControl.WndProc
+005a58c5 +5e9 chronoThermo.exe Vcl.Controls    10079 +158 TWinControl.WndProc
+00646834 +62c chronoThermo.exe Vcl.Forms        4427 +206 TCustomForm.WndProc
+005a4ee4 +02c chronoThermo.exe Vcl.Controls     9786   +3 TWinControl.MainWndProc
+00539f5c +014 chronoThermo.exe System.Classes  16882   +8 StdWndProc
+770d0137 +02b ntdll.dll                                   KiUserCallbackDispatcher
+005a0d1d +2bd chronoThermo.exe Vcl.Controls     7245  +91 TControl.WndProc
+005a58c5 +5e9 chronoThermo.exe Vcl.Controls    10079 +158 TWinControl.WndProc
+00646834 +62c chronoThermo.exe Vcl.Forms        4427 +206 TCustomForm.WndProc
+005a0958 +024 chronoThermo.exe Vcl.Controls     7023  +10 TControl.Perform
+005a4c8d +10d chronoThermo.exe Vcl.Controls     9709  +19 TWinControl.UpdateShowing
+005a4d9c +0bc chronoThermo.exe Vcl.Controls     9744  +21 TWinControl.UpdateControlState
+005a796a +026 chronoThermo.exe Vcl.Controls    11513   +3 TWinControl.CMVisibleChanged
+005a0d1d +2bd chronoThermo.exe Vcl.Controls     7245  +91 TControl.WndProc
+005a58c5 +5e9 chronoThermo.exe Vcl.Controls    10079 +158 TWinControl.WndProc
+00646834 +62c chronoThermo.exe Vcl.Forms        4427 +206 TCustomForm.WndProc
+005a0958 +024 chronoThermo.exe Vcl.Controls     7023  +10 TControl.Perform
+0059f30a +026 chronoThermo.exe Vcl.Controls     6052   +5 TControl.SetVisible
+0064606d +03d chronoThermo.exe Vcl.Forms        4142   +9 TCustomForm.SetVisible
+0065005b +0b3 chronoThermo.exe Vcl.Forms       10517  +23 TApplication.Run
+006a5ebc +064 chronoThermo.exe chronoThermo       24   +4 initialization
+74b63378 +010 kernel32.dll                                BaseThreadInitThunk
+
+thread $740:
+770e01a2 +0e ntdll.dll     NtWaitForMultipleObjects
+74b63378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $f00:
+770e1f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+74b63378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $ce0 (TdOPCMsgThread):
+770e01a2 +0e ntdll.dll                                  NtWaitForMultipleObjects
+74e215f1 +fa KERNELBASE.dll                             WaitForMultipleObjectsEx
+74b61a07 +89 kernel32.dll                               WaitForMultipleObjectsEx
+0058c66e +56 chronoThermo.exe System.SyncObjs   727 +13 THandleObject.WaitFor
+0068493b +9f chronoThermo.exe dOPCComn                  TdOPCMsgThread.Execute
+004a900b +2b chronoThermo.exe madExcept                 HookedTThreadExecute
+00536469 +49 chronoThermo.exe System.Classes  14356 +21 ThreadProc
+0040a1b8 +28 chronoThermo.exe System          24003 +45 ThreadWrapper
+004a8ef1 +0d chronoThermo.exe madExcept                 CallThreadProcSafe
+004a8f56 +32 chronoThermo.exe madExcept                 ThreadExceptFrame
+74b63378 +10 kernel32.dll                               BaseThreadInitThunk
+>> created by main thread ($ea4) at:
+0068482f +2b chronoThermo.exe dOPCComn                  TdOPCMsgThread.Create
+
+thread $b50 (TdOPCMsgThread):
+770e01a2 +0e ntdll.dll                                  NtWaitForMultipleObjects
+74e215f1 +fa KERNELBASE.dll                             WaitForMultipleObjectsEx
+74b61a07 +89 kernel32.dll                               WaitForMultipleObjectsEx
+0058c66e +56 chronoThermo.exe System.SyncObjs   727 +13 THandleObject.WaitFor
+0068493b +9f chronoThermo.exe dOPCComn                  TdOPCMsgThread.Execute
+004a900b +2b chronoThermo.exe madExcept                 HookedTThreadExecute
+00536469 +49 chronoThermo.exe System.Classes  14356 +21 ThreadProc
+0040a1b8 +28 chronoThermo.exe System          24003 +45 ThreadWrapper
+004a8ef1 +0d chronoThermo.exe madExcept                 CallThreadProcSafe
+004a8f56 +32 chronoThermo.exe madExcept                 ThreadExceptFrame
+74b63378 +10 kernel32.dll                               BaseThreadInitThunk
+>> created by main thread ($ea4) at:
+0068482f +2b chronoThermo.exe dOPCComn                  TdOPCMsgThread.Create
+
+thread $82c:
+770e1f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+74b63378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $d30:
+770dfdd6 +0e ntdll.dll                  NtDelayExecution
+004a8ef1 +0d chronoThermo.exe madExcept CallThreadProcSafe
+004a8f56 +32 chronoThermo.exe madExcept ThreadExceptFrame
+74b63378 +10 kernel32.dll               BaseThreadInitThunk
+>> created by main thread ($ea4) at:
+7697da7e +00 ole32.dll
+
+thread $ab0:
+770e1f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+74b63378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $518:
+770e1f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+74b63378 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $fcc:
+770e1f8b +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+74b63378 +10 kernel32.dll  BaseThreadInitThunk
+
+modules:
+00400000 chronoThermo.exe 1.0.5683.5255      C:\dev\Alumaster\chronoThermo\bld
+01370000 RPCRT4.dll       6.1.7601.18912     C:\Windows\syswow64
+015f0000 MSCTF.dll        6.1.7601.18731     C:\Windows\syswow64
+04f70000 opcproxy.dll     3.0.105.1          C:\Windows\SysWow64
+10000000 opccomn_ps.dll   1.10.105.1         C:\Windows\SysWow64
+6a600000 FaultRep.dll     6.1.7601.17514     C:\Windows\system32
+72a40000 ntmarta.dll      6.1.7600.16385     C:\Windows\system32
+73190000 msxml6.dll       6.30.7601.18431    C:\Windows\System32
+735b0000 RpcRtRemote.dll  6.1.7601.17514     C:\Windows\system32
+735c0000 rsaenh.dll       6.1.7600.16385     C:\Windows\system32
+73600000 CRYPTSP.dll      6.1.7601.18741     C:\Windows\system32
+73620000 propsys.dll      7.0.7601.17514     C:\Windows\system32
+73ae0000 WINSTA.dll       6.1.7601.18540     C:\Windows\system32
+73b10000 wtsapi32.dll     6.1.7601.17514     C:\Windows\system32
+73b20000 uxtheme.dll      6.1.7600.16385     C:\Windows\system32
+73c00000 winspool.drv     6.1.7601.17514     C:\Windows\system32
+73c60000 comctl32.dll     6.10.7601.18837    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d
+74370000 avcuf32.dll      3.11.11868.5873    C:\Program Files\Bitdefender\Antivirus Free Edition\avc3\avc3_sig_314
+745e0000 dwmapi.dll       6.1.7601.18796     C:\Windows\system32
+74630000 srvcli.dll       6.1.7601.17514     C:\Windows\system32
+74660000 wsock32.dll      6.1.7600.16385     C:\Windows\system32
+74760000 netapi32.dll     6.1.7601.17887     C:\Windows\system32
+74780000 wkscli.dll       6.1.7601.17514     C:\Windows\system32
+74790000 netutils.dll     6.1.7601.17514     C:\Windows\system32
+74870000 version.dll      6.1.7600.16385     C:\Windows\system32
+74a20000 CRYPTBASE.dll    6.1.7601.18912     C:\Windows\syswow64
+74a30000 SspiCli.dll      6.1.7601.18912     C:\Windows\syswow64
+74a90000 oleaut32.dll     6.1.7601.18679     C:\Windows\syswow64
+74b20000 DEVOBJ.dll       6.1.7601.17621     C:\Windows\syswow64
+74b50000 kernel32.dll     6.1.7601.18869     C:\Windows\syswow64
+74c60000 SETUPAPI.dll     6.1.7601.17514     C:\Windows\syswow64
+74e00000 NSI.dll          6.1.7600.16385     C:\Windows\syswow64
+74e10000 KERNELBASE.dll   6.1.7601.18869     C:\Windows\syswow64
+74e60000 GDI32.dll        6.1.7601.18898     C:\Windows\syswow64
+74ef0000 SHLWAPI.dll      6.1.7601.17514     C:\Windows\syswow64
+74f50000 CFGMGR32.dll     6.1.7601.17621     C:\Windows\syswow64
+74f90000 msvcrt.dll       7.0.7601.17744     C:\Windows\syswow64
+75040000 sechost.dll      6.1.7601.18869     C:\Windows\SysWOW64
+75070000 WS2_32.dll       6.1.7601.17514     C:\Windows\syswow64
+750d0000 ADVAPI32.dll     6.1.7601.18869     C:\Windows\syswow64
+75680000 comdlg32.dll     6.1.7601.17514     C:\Windows\syswow64
+75700000 IMM32.DLL        6.1.7601.17514     C:\Windows\system32
+75a40000 shell32.dll      6.1.7601.18762     C:\Windows\syswow64
+76690000 USP10.dll        1.626.7601.18454   C:\Windows\syswow64
+76730000 USER32.dll       6.1.7601.17514     C:\Windows\syswow64
+76830000 LPK.dll          6.1.7601.18914     C:\Windows\syswow64
+76870000 WLDAP32.dll      6.1.7601.17514     C:\Windows\syswow64
+768c0000 CLBCatQ.DLL      2001.12.8530.16385 C:\Windows\syswow64
+76950000 ole32.dll        6.1.7601.18915     C:\Windows\syswow64
+770c0000 ntdll.dll        6.1.7601.18869     C:\Windows\SysWOW64
+
+processes:
+000 Idle                   0 0    0
+004 System                 0 0    0
+134 smss.exe               0 0    0   normal
+1c4 csrss.exe              0 0    0   normal
+1fc csrss.exe              1 174  78  normal
+204 wininit.exe            0 0    0   high
+22c winlogon.exe           1 6    0   high
+264 services.exe           0 0    0   normal
+26c lsass.exe              0 0    0   normal
+274 lsm.exe                0 0    0   normal
+2d4 svchost.exe            0 0    0   normal
+30c gzserv.exe             0 0    0   normal
+358 svchost.exe            0 0    0   normal
+3b0 svchost.exe            0 0    0   normal
+3d8 svchost.exe            0 0    0   normal
+3f4 svchost.exe            0 0    0   normal
+080 svchost.exe            0 0    0   normal
+348 svchost.exe            0 0    0   normal
+46c svchost.exe            0 0    0   normal
+4e4 spoolsv.exe            0 0    0   normal
+508 svchost.exe            0 0    0   normal
+654 svchost.exe            0 0    0   normal
+6b0 fbguard.exe            0 0    0   normal C:\Program Files (x86)\Firebird\Firebird_2_5\bin
+6f4 taskhost.exe           1 26   23  normal
+71c dwm.exe                1 15   2   high
+730 explorer.exe           1 621  384 normal
+7a0 gziface.exe            1 57   51  normal
+6a0 svchost.exe            0 0    0   normal
+694 vmtoolsd.exe           0 0    0   high
+964 fbserver.exe           0 0    0   normal C:\Program Files (x86)\Firebird\Firebird_2_5\bin
+a3c svchost.exe            0 0    0   normal
+b24 TPAutoConnSvc.exe      0 0    0   normal
+b5c vmtoolsd.exe           1 85   24  normal
+bc4 dllhost.exe            0 0    0   normal
+98c TPAutoConnect.exe      1 14   8   normal
+214 conhost.exe            1 20   1   normal
+af4 msdtc.exe              0 0    0   normal
+c50 SearchIndexer.exe      0 0    0   normal
+e04 svchost.exe            0 0    0   normal
+538 bds.exe                1 2485 715 normal C:\Program Files (x86)\Embarcadero\Studio\16.0\bin
+408 wuauclt.exe            1 12   7   normal
+864 TrustedInstaller.exe   0 0    0   normal
+b10 scalc.exe              1 4    1   normal C:\Program Files (x86)\LibreOffice 4\program
+b94 soffice.exe            1 4    1   normal C:\Program Files (x86)\LibreOffice 4\program
+3cc soffice.bin            1 121  151 normal C:\Program Files (x86)\LibreOffice 4\program
+db0 sublime_text.exe       1 90   106 normal
+820 plugin_host.exe        1 4    1   normal
+8a8 GitHub.exe             1 35   29  normal C:\Users\Administrator\AppData\Local\Apps\2.0\NJPM6KOC.0T3\J1C8K5BP.X8K\gith..tion_317444273a93ac29_0002.000e_114545a4195e25d4
+b74 ssh-agent.exe          1 4    1   normal C:\Users\Administrator\AppData\Local\GitHub\PortableGit_c2ba306e536fdf878271f7fe636a147ff37326ad\bin
+3e4 audiodg.exe            0 0    0
+d1c acmeSentrolServer3.exe 1 58   60  normal C:\dev\Kassl\AcmeSentrolServer3
+d94 chronoThermo.exe       1 73   55  normal C:\dev\Alumaster\chronoThermo\bld
+
+hardware:
++ Batteries
+  - Batteria composita Microsoft
+  - Scheda AC Microsoft
++ Computer
+  - ACPI x64-based PC
++ Disk drives
+  - VMware, VMware Virtual S SCSI Disk Device
++ Display adapters
+  - VMware SVGA 3D (driver 7.14.1.5026)
++ DVD/CD-ROM drives
+  - NECVMWar VMware SATA CD01 ATA Device
++ Floppy disk drives
+  - Unità disco floppy
++ Floppy drive controllers
+  - Controller disco floppy standard
++ Human Interface Devices
+  - Dispositivo di input USB
+  - Dispositivo di input USB
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - ATA Channel 1
+  - ATA Channel 10
+  - ATA Channel 11
+  - ATA Channel 12
+  - ATA Channel 13
+  - ATA Channel 14
+  - ATA Channel 15
+  - ATA Channel 16
+  - ATA Channel 17
+  - ATA Channel 18
+  - ATA Channel 19
+  - ATA Channel 2
+  - ATA Channel 20
+  - ATA Channel 21
+  - ATA Channel 22
+  - ATA Channel 23
+  - ATA Channel 24
+  - ATA Channel 25
+  - ATA Channel 26
+  - ATA Channel 27
+  - ATA Channel 28
+  - ATA Channel 29
+  - ATA Channel 3
+  - ATA Channel 4
+  - ATA Channel 5
+  - ATA Channel 6
+  - ATA Channel 7
+  - ATA Channel 8
+  - ATA Channel 9
+  - Controller ATA seriale standard AHCI 1.0
+  - Controller IDE Intel(R) 82371AB/EB PCI Bus Master
++ Keyboards
+  - Tastiera PS/2 standard
++ Memory devices
+  - Modulo di memoria
+  - Modulo di memoria
++ Mice and other pointing devices
+  - VMware Pointing Device (driver 12.5.2.0)
+  - VMware USB Pointing Device (driver 12.5.2.0)
+  - VMware USB Pointing Device (driver 12.5.2.0)
++ Monitors
+  - Monitor generico non Plug and Play
+  - Monitor generico non Plug and Play
++ Network adapters
+  - Connessione di rete Intel(R) PRO/1000 MT
+  - Microsoft ISATAP Adapter
+  - Microsoft ISATAP Adapter #2
+  - Miniport WAN (PPPOE)
+  - Teredo Tunneling Pseudo-Interface
+  - WAN Miniport (IKEv2)
+  - WAN Miniport (IP)
+  - WAN Miniport (IPv6)
+  - WAN Miniport (L2TP)
+  - WAN Miniport (Network Monitor)
+  - WAN Miniport (PPTP)
+  - WAN Miniport (SSTP)
++ Ports (COM & LPT)
+  - Porta di comunicazione (COM1)
+  - Porta di comunicazione (COM2)
+  - Porta stampante (LPT1)
++ Processors
+  - Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz
+  - Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz
+  - Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz
+  - Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz
++ Sound, video and game controllers
+  - Dispositivo High Definition Audio
++ Storage controllers
+  - Scheda LSI, serie SAS 3000, 8 porte con 1068 (driver 1.28.3.52)
++ Storage volume shadow copies
+  - Copia shadow volume generico
+  - Copia shadow volume generico
+  - Copia shadow volume generico
++ System devices
+  - Adattatore Intel 82371AB/EB da PCI a ISA (modalità ISA)
+  - Adattatore Intel 82443BX Pentium(R) II da processore a PCI
+  - Adattatore PCI standard da PCI a PCI
+  - Adattatore PCI standard da PCI a PCI
+  - Altoparlante di sistema
+  - Archiviazione volumi
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus generico
+  - Bus PCI
+  - Controller di accesso diretto alla memoria (DMA)
+  - Controller di interrupt programmabile EISA
+  - Controller per High Definition Audio
+  - Driver BIOS Microsoft System Management
+  - Driver enumeratore unità virtuale Microsoft
+  - Driver file come volume
+  - Driver mouse di Terminal Server
+  - Driver tastiera di Terminal Server
+  - Enumeratore bus composito
+  - Enumeratore bus radice UMBus
+  - Enumeratore di dispositivi software Plug and Play
+  - Enumeratore UMBus
+  - Interfaccia logica porta stampante
+  - Orologio di sistema CMOS a tempo reale
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Porta radice standard PCI Express
+  - Pulsante caratteristica ACPI fissa
+  - Remote Desktop Device Redirector Bus
+  - Risorse scheda madre
+  - Risorse scheda madre
+  - Sistema compatibile ACPI Microsoft
+  - Timer di sistema
+  - Timer eventi alta precisione
+  - VMware VMCI Bus Device (driver 9.5.10.0)
+  - VMware VMCI Host Device (driver 9.5.10.0)
++ Universal Serial Bus controllers
+  - Controller host standard avanzato da PCI a USB
+  - Controller Standard Universal Host da PCI a USB
+  - Dispositivo USB composito
+  - Generic USB Hub
+  - Hub radice USB
+  - Hub radice USB
+
+cpu registers:
+eax = 00000000
+ebx = 00675594
+ecx = 00000000
+edx = 0018ef0c
+esi = 006491ac
+edi = 00000000
+eip = 00698968
+esp = 0018eeb4
+ebp = 0018ef90
+
+stack dump:
+0018eeb4  bc ef 18 00 a4 98 40 00 - 90 ef 18 00 68 4f 67 00  ......@.....hOg.
+0018eec4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018eed4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018eee4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018eef4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018ef04  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018ef14  00 00 00 00 00 00 00 00 - 00 00 00 00 e4 b4 33 00  ..............3.
+0018ef24  00 00 00 00 00 00 00 00 - 00 00 00 00 fc e8 33 00  ..............3.
+0018ef34  00 00 00 00 00 00 00 00 - 00 00 00 00 24 e7 33 00  ............$.3.
+0018ef44  00 00 00 00 34 92 e5 02 - 11 00 00 00 00 00 00 00  ....4...........
+0018ef54  00 00 00 00 00 00 00 00 - 9c e0 33 00 00 00 00 00  ..........3.....
+0018ef64  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018ef74  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018ef84  78 8d e5 02 00 00 00 00 - 70 29 e9 02 b4 ef 18 00  x.......p)......
+0018ef94  e0 93 69 00 00 00 00 00 - 01 00 00 00 88 11 e5 02  ..i.............
+0018efa4  01 00 00 00 d0 ef 18 00 - 50 50 e7 02 78 8d e5 02  ........PP..x...
+0018efb4  2c f0 18 00 73 96 69 00 - 34 f0 18 00 a4 98 40 00  ,...s.i.4.....@.
+0018efc4  2c f0 18 00 68 4f 67 00 - 00 00 00 00 00 00 00 00  ,...hOg.........
+0018efd4  00 00 00 00 dc 26 e9 02 - 11 00 00 00 00 00 00 00  .....&..........
+0018efe4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+
+disassembling:
+[...]
+00698951      mov     edx, [$69828c]
+00698957      call    -$2901b0 ($4087ac)     ; System.@IntfAsClass
+0069895c      mov     [ebp-$18], eax
+0069895f 80   lea     edx, [ebp-$84]
+00698965      mov     eax, [ebp-$18]
+00698968    > mov     eax, [eax+$c]
+0069896b      mov     ecx, [eax]
+0069896d      call    dword ptr [ecx+$14]
+00698970      mov     eax, [ebp-$84]
+00698976      lea     ecx, [ebp-$14]
+00698979      mov     edx, [$6aeb18]
+[...]
+
