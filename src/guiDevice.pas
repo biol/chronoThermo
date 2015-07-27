@@ -186,13 +186,34 @@ type
     CheckBox167: TCheckBox;
     Panel1: TPanel;
     lblDevice: TLabel;
+    Label5: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    lbFrom: TListBox;
+    lbTo: TListBox;
+    Label10: TLabel;
+    Label11: TLabel;
+    btnCopy: TButton;
+    btnResetAll: TButton;
+    btnSetAll: TButton;
+    lbDevices: TListBox;
+    btnCopyFromDevice: TButton;
+    btnOpenDevice: TButton;
+    Label12: TLabel;
     btnSave: TButton;
     procedure FormCreate(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
+    procedure btnCopyClick(Sender: TObject);
+    procedure btnSetAllClick(Sender: TObject);
+    procedure btnOpenDeviceClick(Sender: TObject);
+    procedure btnCopyFromDeviceClick(Sender: TObject);
   private
-    _Group: IFieldGroup;
+    _Groups: TFieldGroups;
+    _Group : IFieldGroup;
+    procedure setup2(iGroup: integer);
   public
-    procedure setup(pGroup: IFieldGroup);
+    procedure setup(pGroups: TFieldGroups);
     procedure save;
   end;
 
@@ -207,9 +228,66 @@ var
   aCB: array[0..6, 0..23] of TCheckBox;
 
 
+procedure TFormDevice.btnCopyClick(Sender: TObject);
+var iHour,iDay: integer;
+begin
+  if lbFrom.ItemIndex < 0 then
+  begin
+    showMessage('Please select a day to copy from');   exit
+  end;
+  if lbTo.ItemIndex < 0 then
+  begin
+    showMessage('Please select one ore more days to copy to');   exit
+  end;
+  for iDay := 0 to 6 do if (iDay <> lbFrom.ItemIndex) and lbTo.selected[iDay] then
+  begin
+    for iHour := 0 to 23 do aCB[iDay, iHour].Checked := aCB[lbFrom.ItemIndex, iHour].Checked
+  end;
+end;
+
+procedure TFormDevice.btnCopyFromDeviceClick(Sender: TObject);
+var myGroup : IFieldGroup;
+begin
+  if lbDevices.ItemIndex < 0 then
+  begin
+    showMessage('Please select a device to copy all hours from');   exit
+  end;
+  myGroup := _Group;
+  try
+    setup2(lbDevices.ItemIndex)
+  finally
+    _Group := myGroup;
+    lblDevice.Caption := _Group.Caption;
+  end;
+end;
+
+procedure TFormDevice.btnOpenDeviceClick(Sender: TObject);
+begin
+  if lbDevices.ItemIndex < 0 then
+  begin
+    showMessage('Please select a device to open');   exit
+  end;
+  save;
+  setup2(lbDevices.ItemIndex)
+end;
+
 procedure TFormDevice.btnSaveClick(Sender: TObject);
 begin
   save; close
+end;
+
+procedure TFormDevice.btnSetAllClick(Sender: TObject);
+var b: boolean; iHour,iDay: integer;
+begin
+  if lbTo.ItemIndex < 0 then
+  begin
+    showMessage('Please select one ore more days to work on');   exit
+  end;
+  with Sender as TButton do b := Tag <> 0;
+  for iDay := 0 to 6 do if lbTo.selected[iDay] then
+  begin
+    for iHour := 0 to 23 do aCB[iDay, iHour].Checked := b
+  end;
 end;
 
 procedure TFormDevice.FormCreate(Sender: TObject);
@@ -393,34 +471,51 @@ end;
 procedure TFormDevice.save;
 var iDay, iHour, iBits: integer;
 begin
-  for iDay := 0 to 6 do begin
-    iBits := 0;
-    for iHour := 11 downto 0 do begin
-      iBits := iBits * 2;
-      if aCB[iDay, iHour].Checked then inc(iBits);
+  try
+    screen.Cursor := crHourGlass;   application.ProcessMessages;
+    for iDay := 0 to 6 do begin
+      iBits := 0;
+      for iHour := 11 downto 0 do begin
+        iBits := iBits * 2;
+        if aCB[iDay, iHour].Checked then inc(iBits);
+      end;
+      _Group.FieldItems[iDay * 2].WriteSync(iBits);
+      iBits := 0;
+      for iHour := 23 downto 12 do begin
+        iBits := iBits * 2;
+        if aCB[iDay, iHour].Checked then inc(iBits);
+      end;
+      _Group.FieldItems[iDay * 2 + 1].WriteSync(iBits);
     end;
-    _Group.FieldItems[iDay * 2].WriteSync(iBits);
-    iBits := 0;
-    for iHour := 23 downto 12 do begin
-      iBits := iBits * 2;
-      if aCB[iDay, iHour].Checked then inc(iBits);
-    end;
-    _Group.FieldItems[iDay * 2 + 1].WriteSync(iBits);
+  finally
+    screen.Cursor := crDefault;
   end;
 end;
 
-procedure TFormDevice.setup(pGroup: IFieldGroup); { ogni gruppo contiene 2 x 7 = 14 int; ogni int rappresenta 12 bit
+procedure TFormDevice.setup(pGroups: TFieldGroups); { ogni gruppo contiene 2 x 7 = 14 int; ogni int rappresenta 12 bit
 }
+var iDev: integer;
+begin
+  _Groups := pGroups;
+  lbDevices.Clear;
+  for iDev := 0 to high(pGroups) do begin
+    lbDevices.Items.add(pGroups[iDev].Caption);
+  end;
+  setup2(0);
+end;
+
+procedure TFormDevice.setup2(iGroup: integer);
 var iDay, iHour, iBits: integer;
 begin
-  _Group := pGroup;   lblDevice.Caption := pGroup.Caption;
+  _Group := _Groups[iGroup];
+  lblDevice.Caption := _Group.Caption;
   for iDay := 0 to 6 do begin
-    iBits := pGroup.FieldItems[iDay * 2].Value;
+    iBits := _Group.FieldItems[iDay * 2].Value;
     for iHour := 0 to 11 do begin
       aCB[iDay, iHour].Checked := (iBits mod 2) <> 0;
       iBits := iBits div 2;
     end;
-    iBits := pGroup.FieldItems[iDay * 2 + 1].Value;
+    iBits := _Group.FieldItems[iDay * 2 + 1].Value;
     for iHour := 12 to 23 do begin
       aCB[iDay, iHour].Checked := (iBits mod 2) <> 0;
       iBits := iBits div 2;

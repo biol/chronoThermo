@@ -1,7 +1,7 @@
 object FormMain: TFormMain
   Left = 0
   Top = 0
-  Caption = 'FormMain'
+  Caption = 'C h r o n o T h e r m o s t a t e'
   ClientHeight = 398
   ClientWidth = 417
   Color = clBtnFace
@@ -21,24 +21,27 @@ object FormMain: TFormMain
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = 40
-    ExplicitTop = 8
-    ExplicitWidth = 185
-    object lblDevice: TLabel
-      Left = 24
-      Top = 14
-      Width = 32
-      Height = 13
-      Caption = 'Device'
-    end
-    object cbDevice: TComboBox
-      Left = 88
-      Top = 14
-      Width = 233
-      Height = 21
-      Style = csDropDownList
+    DesignSize = (
+      417
+      41)
+    object btnOpc: TButton
+      Left = 329
+      Top = 10
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = 'O P C'
       TabOrder = 0
-      OnChange = cbDeviceChange
+      OnClick = btnOpcClick
+    end
+    object btnDevices: TButton
+      Left = 8
+      Top = 10
+      Width = 201
+      Height = 25
+      Caption = 'D e v i c e s'
+      TabOrder = 1
+      OnClick = btnDevicesClick
     end
   end
   object MemoLOG: TMemo
@@ -49,16 +52,12 @@ object FormMain: TFormMain
     Align = alClient
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -11
     Font.Name = 'Consolas'
     Font.Style = []
     Lines.Strings = (
       'MemoLOG')
     ParentFont = False
     TabOrder = 1
-    ExplicitLeft = 104
-    ExplicitTop = 120
-    ExplicitWidth = 185
-    ExplicitHeight = 89
   end
 end

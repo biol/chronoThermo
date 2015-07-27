@@ -10,10 +10,11 @@ type
   TFormMain = class(TForm)
     Panel1: TPanel;
     MemoLOG: TMemo;
-    cbDevice: TComboBox;
-    lblDevice: TLabel;
+    btnOpc: TButton;
+    btnDevices: TButton;
     procedure FormActivate(Sender: TObject);
-    procedure cbDeviceChange(Sender: TObject);
+    procedure btnOpcClick(Sender: TObject);
+    procedure btnDevicesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,12 +33,14 @@ var
   K_xml: string = './chronoThermo.xml';
   FormFieldGroups: TFormFieldGroups;
 
-procedure TFormMain.cbDeviceChange(Sender: TObject);
+procedure TFormMain.btnDevicesClick(Sender: TObject);
 begin
-  with FormDevice do begin
-    setup(FieldFactory.fieldServer.FieldGroups[(Sender as TComboBox).itemIndex]);
-    showModal
-  end;
+  FormDevice.showModal
+end;
+
+procedure TFormMain.btnOpcClick(Sender: TObject);
+begin
+  FormFieldGroups.show;
 end;
 
 procedure TFormMain.FormActivate(Sender: TObject);
@@ -51,13 +54,12 @@ begin
   MyLog.add('xml: ' + K_xml);
   FieldFactory.buildFromXML(K_xml);
 
-  cbDevice.Items.Clear;
-  for i := 0 to length(FieldFactory.fieldServer.FieldGroups) - 1 do begin
-    cbDevice.Items.add(FieldFactory.fieldServer.FieldGroups[i].Caption);
-  end;
-
   FormFieldGroups.setup(FieldFactory.fieldServer.FieldGroups, 'wsApp 2015');
-  FormFieldGroups.show;
+
+  with FormDevice do begin
+    setup(FieldFactory.fieldServer.FieldGroups);
+    showModal
+  end;
 end;
 
 end.

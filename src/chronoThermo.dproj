@@ -71,6 +71,9 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Release>1</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.1.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_ExeOutput>..\bld</DCC_ExeOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -78,7 +81,6 @@
         <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
         <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
         <DCC_UnitSearchPath>C:\dev\commonXE\FieldData;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -517,13 +519,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>
