@@ -1,9 +1,11 @@
 object FormDevice: TFormDevice
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'idle and work (checked) setpoint hours management'
   ClientHeight = 437
-  ClientWidth = 708
+  ClientWidth = 700
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,7 +15,7 @@ object FormDevice: TFormDevice
   OldCreateOrder = False
   OnCreate = FormCreate
   DesignSize = (
-    708
+    700
     437)
   PixelsPerInch = 96
   TextHeight = 13
@@ -1338,16 +1340,16 @@ object FormDevice: TFormDevice
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 708
+    Width = 700
     Height = 41
     Align = alTop
     TabOrder = 168
+    ExplicitWidth = 708
     object lblDevice: TLabel
-      Left = 17
-      Top = 14
-      Width = 214
+      Left = 96
+      Top = 12
+      Width = 74
       Height = 19
-      AutoSize = False
       Caption = 'lblDevice'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -1355,6 +1357,35 @@ object FormDevice: TFormDevice
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
+    end
+    object btnEdit: TButton
+      Left = 616
+      Top = 9
+      Width = 75
+      Height = 25
+      Caption = 'Edit'
+      TabOrder = 0
+      OnClick = btnEditClick
+    end
+    object btnPreviousDevice: TButton
+      Tag = -1
+      Left = 8
+      Top = 9
+      Width = 25
+      Height = 25
+      Caption = '<'
+      TabOrder = 1
+      OnClick = btnNextDeviceClick
+    end
+    object btnNextDevice: TButton
+      Tag = 1
+      Left = 52
+      Top = 9
+      Width = 25
+      Height = 25
+      Caption = '>'
+      TabOrder = 2
+      OnClick = btnNextDeviceClick
     end
   end
   object lbFrom: TListBox
@@ -1457,7 +1488,7 @@ object FormDevice: TFormDevice
     OnClick = btnOpenDeviceClick
   end
   object btnSave: TButton
-    Left = 635
+    Left = 637
     Top = 332
     Width = 54
     Height = 97

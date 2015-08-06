@@ -202,16 +202,23 @@ type
     btnOpenDevice: TButton;
     Label12: TLabel;
     btnSave: TButton;
+    btnEdit: TButton;
+    btnPreviousDevice: TButton;
+    btnNextDevice: TButton;
     procedure FormCreate(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure btnCopyClick(Sender: TObject);
     procedure btnSetAllClick(Sender: TObject);
     procedure btnOpenDeviceClick(Sender: TObject);
     procedure btnCopyFromDeviceClick(Sender: TObject);
+    procedure btnEditClick(Sender: TObject);
+    procedure btnNextDeviceClick(Sender: TObject);
   private
     _Groups: TFieldGroups;
     _Group : IFieldGroup;
     procedure setup2(iGroup: integer);
+    procedure resizeToWeWantToEdit;
+    procedure resizeToWeAreDone;
   public
     procedure setup(pGroups: TFieldGroups);
     procedure save;
@@ -261,6 +268,34 @@ begin
   end;
 end;
 
+procedure TFormDevice.btnEditClick(Sender: TObject);
+begin
+  if ClientHeight = 437 then
+  begin
+    resizeToWeAreDone;
+  end else
+  begin
+    resizeToWeWantToEdit;
+  end;
+
+end;
+
+procedure TFormDevice.btnNextDeviceClick(Sender: TObject);
+var g: IFieldGroup; var i: integer;
+begin
+  i := 0;
+  for g in _Groups do begin
+    if g = _group then break;   // trovato il gruppo in cui siamo adesso
+    inc(i);
+  end;
+  i := i + (Sender as TButton).Tag;   // mi muovo avanti o indietro
+  if (i >= 0) and (i < length(_Groups)) then
+  begin   // sono ancora dentro il range
+    save;
+    setup2(i);
+  end;
+end;
+
 procedure TFormDevice.btnOpenDeviceClick(Sender: TObject);
 begin
   if lbDevices.ItemIndex < 0 then
@@ -292,6 +327,7 @@ end;
 
 procedure TFormDevice.FormCreate(Sender: TObject);
 begin
+                                   resizeToWeAreDone;
   aCB[0, 0] := CheckBox0;
   aCB[0, 1] := CheckBox1;
   aCB[0, 2] := CheckBox2;
@@ -466,6 +502,16 @@ begin
   aCB[6,21] := CheckBox165;
   aCB[6,22] := CheckBox166;
   aCB[6,23] := CheckBox167;
+end;
+
+procedure TFormDevice.resizeToWeAreDone;
+begin
+  ClientHeight := 292; btnEdit.Caption := 'Edit';
+end;
+
+procedure TFormDevice.resizeToWeWantToEdit;
+begin
+  ClientHeight := 437; btnEdit.Caption := 'Done';
 end;
 
 procedure TFormDevice.save;
